@@ -38,7 +38,7 @@ def uscan(ips, ports):
 				else:
 					s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 					s.settimeout(1)
-					s.sendto("test", (ip, port))
+					s.sendto(b"test", (ip, port))
 					data, address = s.recvfrom(1500)
 					print ("udp port " + str(port) + " open on " + ip)
 			except Exception:
